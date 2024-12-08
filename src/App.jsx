@@ -1,36 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import Phones from "./Phones";
+import Tablets from "./Tablets";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const DeviceToggle = () => {
+    const [isShowingPhones, setIsShowingPhones] = useState(true);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-        <p>lorem d fdkfdfkmldf</p>
-    </>
-  )
-}
+    return (
+        <div className="device-toggle">
 
-export default App
+            <div className="toggle-buttons">
+                <button  id="Phones" onClick={() => setIsShowingPhones(true)}className={isShowingPhones ? "active" : ""}>Show Phones</button>
+
+                <button id="Tablets" onClick={() => setIsShowingPhones(false)} className={!isShowingPhones ? "active" : ""}> Show Tablets</button>
+            </div>
+
+
+            <div className="device-list">
+                {isShowingPhones
+                    ? Phones.map((phone, index) => (
+                        <div className="device-item" key={index}>
+                            <img src={phone.image} alt={phone.name} />
+                            <h3>{phone.name}</h3>
+                            <p>Price: ${phone.price}</p>
+                            <p>{phone.description}</p>
+                        </div>
+                    ))
+                    : Tablets.map((tablet, index) => (
+                        <div className="device-item" key={index}>
+                            <img src={tablet.image} alt={tablet.name} />
+                            <h3>{tablet.name}</h3>
+                            <p>Price: ${tablet.price}</p>
+                            <p>{tablet.description}</p>
+                        </div>
+                    ))}
+            </div>
+        </div>
+    );
+};
+
+export default DeviceToggle;
