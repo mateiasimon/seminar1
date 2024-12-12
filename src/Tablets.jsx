@@ -1,8 +1,8 @@
 const Tablets = [
     {
-        name: "Tablet N1",
+        name: "Tblet GAy porn",
         price: "ფასი",
-        description: "A lightweight and powerful laptop with a stunning display.",
+        description: "GAy porno sigma sigma nigga",
         image: "https://tse3.mm.bing.net/th?id=OIP.4um1j5A5tU4kbwgda2af3wHaHa&pid=Api&P=0&h=220"
     },
     {
