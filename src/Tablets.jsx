@@ -2,7 +2,7 @@ const Tablets = [
     {
         name: "Tblet GAy porn",
         price: "ფასი",
-        description: "GAy porno sigma sigma nigga",
+        description: "normal description here, nothing to see",
         image: "https://tse3.mm.bing.net/th?id=OIP.4um1j5A5tU4kbwgda2af3wHaHa&pid=Api&P=0&h=220"
     },
     {
